@@ -136,6 +136,8 @@ Supportability Matrix
 +-------------------------+---------------+----------+-----------------+
 | IPM-HX1B                | Yes           |  working |                 |
 +-------------------------+---------------+----------+-----------------+
+| IP5M-T1277EW-AI         | Yes           |  working |                 |
++-------------------------+---------------+----------+-----------------+
 
 If you have different model, feel fee to contribute and report your results.
 
