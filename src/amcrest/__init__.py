@@ -25,6 +25,7 @@ from .system import System
 from .user_management import UserManagement
 from .video import Video
 from .privacy_mode import PrivacyMode
+from .coaxial import Coaxial
 
 
 class AmcrestCamera:
@@ -75,5 +76,6 @@ class ApiWrapper(
     Nas,
     Media,
     PrivacyMode,
+    Coaxial
 ):
     pass
