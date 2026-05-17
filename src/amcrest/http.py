@@ -502,6 +502,18 @@ class Http:
             f"configManager.cgi?action=getConfig&name={config_name}"
         )
         return ret.content.decode()
+    
+    def _get_coax_config(self, config_name: str) -> str:
+        ret = self.command(
+            f"coaxialControlIO.cgi?action=getStatus&channel=1"
+        )
+        return ret.content.decode()
+
+    async def _async_get_coax_config(self, config_name: str) -> str:
+        ret = await self.async_command(
+            f"coaxialControlIO.cgi?action=getStatus&channel=1"
+        )
+        return ret.content.decode()
 
     def _magic_box(self, action: str) -> str:
         ret = self.command(f"magicBox.cgi?action={action}")
