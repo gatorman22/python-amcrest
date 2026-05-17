@@ -483,6 +483,17 @@ def main():
                         metavar='httptype channel filename',
                         nargs='+',
                         help='send audio stream')
+                        
+    parser.add_argument('--led-config',
+                        dest='set_coax',
+                        nargs='?',
+                        const=-1,
+                        help='set coax configuration')
+                        
+    parser.add_argument('--get-coax-config',
+                        action='store_true',
+                        help='get coax configuration')              
+                        
     # FIXME:
     # parser.add_argument('--log-show',
     #                     help='show logs <start time> <end time>')
@@ -890,6 +901,12 @@ def main():
 
         elif args.snapshot_config:
             print(camera.snapshot_config)
+            
+        elif args.set_coax:
+            print(camera.set_coax(args.set_coax))
+            
+        elif args.get_coax_config:
+            print(camera.coax_config())
 
         elif args.config_backup:
             if args.save:
@@ -902,6 +919,8 @@ def main():
                 camera.snapshot(args.snapshot_option, args.save)
             else:
                 print("This option requires --save")
+                
+
     else:
         print('Error: You must specify a valid operation. See usage:')
         parser.print_usage()
