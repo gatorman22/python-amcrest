@@ -36,7 +36,13 @@ class Coaxial(Http):
         return ret.content.decode()
 
     def coax_config(self) -> str:
-        return self._get_coax_config()
+        ret = self.command(
+            f"coaxialControlIO.cgi?action=getStatus&channel=1"
+        )
+        return ret.content.decode()
 
     async def async_coax_config(self) -> str:
-        return await self._async_get_coax_config()
+        ret = self.command(
+            f"coaxialControlIO.cgi?action=getStatus&channel=1"
+        )
+        return ret.content.decode()
